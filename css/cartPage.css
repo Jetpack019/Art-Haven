@@ -1,0 +1,111 @@
+.item {
+    padding: 10px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  
+  #cartCount {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #30D5C8;
+    color: #fff;
+  }
+
+  .navbar h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .back-arrow {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+
+  /* CSS for styling the cart items */
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* CSS for styling the product image */
+  .product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+
+  /* CSS for styling the item details */
+  .item-details {
+    flex-grow: 1;
+  }
+
+  .item-details h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .item-details p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  /* CSS for styling the quantity buttons */
+  .quantity-buttons {
+    display: flex;
+    align-items: center;
+  
+  }
+
+  .quantity-buttons button {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: none;
+    background-color: #f7f7f7;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 20px;
+  }
+
+  .quantity-buttons button:hover {
+    background-color: #eee;
+  }
+  .empty-cart-message {
+    text-align: center;
+    margin: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Pacifico', cursive; /* Example of using a custom font */
+    color: #ff9a8b; /* Example of custom font color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Example of text shadow */
+  }

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cart Page</title>
+  <style>
+    /* CSS for styling the cart items */
+    .cart-item {
+      margin-bottom: 10px;
+    }
+
+    /* CSS for styling the product image */
+    .product-image {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Cart Page</h1>
+
+  <div id="cartItems">
+    <!-- Cart items will be dynamically added via JavaScript -->
+  </div>
+
+  <script>
+    // Retrieve cart data from localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+
+    // Function to generate the cart items UI
+    function generateCartItems() {
+      const cartItemsElement = document.getElementById('cartItems');
+
+      if (cartItems) {
+        cartItems.forEach((item) => {
+          const cartItem = document.createElement('div');
+          cartItem.className = 'cart-item';
+
+          const itemImage = document.createElement('img');
+          itemImage.className = 'product-image';
+          itemImage.src = item.image;
+          itemImage.alt = item.name;
+
+          const itemName = document.createElement('div');
+          itemName.textContent = `${item.name} - $${item.price}`;
+
+          const itemQuantity = document.createElement('div');
+          itemQuantity.textContent = `Quantity: ${item.quantity}`;
+
+          const buttonsContainer = document.createElement('div');
+    
+          const minusButton = document.createElement('button');
+          minusButton.textContent = '-';
+          minusButton.onclick = () => removeFromCart(item.id);
+    
+          const plusButton = document.createElement('button');
+          plusButton.textContent = '+';
+          plusButton.onclick = () => addToCart(item.id);
+    
+          buttonsContainer.appendChild(minusButton);
+          buttonsContainer.appendChild(plusButton);
+
+          cartItem.appendChild(itemImage);
+          cartItem.appendChild(itemName);
+          cartItem.appendChild(itemQuantity);
+          cartItem.appendChild(buttonsContainer);
+
+          cartItemsElement.appendChild(cartItem);
+        });
+      }
+    }
+
+    // Call the function to generate the cart items
+    generateCartItems();
+
+    // Function to remove an item from the cart
+    function removeFromCart(id) {
+      const itemIndex = cartItems.findIndex((item) => item.id === id);
+      if (itemIndex !== -1) {
+        const item = cartItems[itemIndex];
+        if (item.quantity > 1) {
+          item.quantity -= 1;
+        } else {
+          cartItems.splice(itemIndex, 1);
+        }
+        updateCart();
+      }
+    }
+
+    // Function to add an item to the cart
+    function addToCart(id) {
+      const product = productList.find((item) => item.id === id);
+      if (product) {
+        const existingItem = cartItems.find((item) => item.id === id);
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cartItems.push({ ...product, quantity: 1 });
+        }
+        updateCart();
+      }
+    }
+
+    // Function to update the cart
+    function updateCart() {
+      // Store cart data in localStorage
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+      // Clear the cart items element
+      const cartItemsElement = document.getElementById('cartItems');
+      cartItemsElement.innerHTML = '';
+
+      // Generate the updated cart items UI
+      generateCartItems();
+    }
+  </script>
+</body>
+
+</html>

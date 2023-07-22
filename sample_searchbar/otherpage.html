@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Other Page</title>
+<link rel="stylesheet" href="searchbar.css">
+  <script>
+    var items = [
+      { name: "Apple", description: "A fruit with a crisp texture and a sweet flavor." },
+      { name: "Around", description: "A fruit with a crisp texture and a sweet flavor." },
+      { name: "Banana", description: "A curved yellow fruit with a soft flesh." },
+      { name: "Orange", description: "A round citrus fruit with a juicy pulp." },
+      { name: "Strawberry", description: "A small red fruit with a sweet and tangy taste." }
+    ];
+
+    function showSuggestions() {
+        var query = document.getElementById("searchInput").value.toLowerCase();
+        var suggestionsContainer = document.getElementById("suggestions");
+        suggestionsContainer.innerHTML = ""; // Clear previous suggestions
+      
+        if (query) {
+          var matchingItems = getMatchingItems(query);
+      
+          if (matchingItems.length > 0) {
+            // Display the matching items as suggestions
+            var firstLetter = query.charAt(0); // Get the first letter of the search query
+      
+            for (var i = 0; i < matchingItems.length; i++) {
+              var itemName = matchingItems[i].name.toLowerCase();
+              if (itemName.startsWith(firstLetter)) {
+                var suggestionItem = document.createElement("div");
+                suggestionItem.className = "suggestion-item";
+                suggestionItem.textContent = matchingItems[i].name;
+                suggestionItem.addEventListener("click", function (event) {
+                  // Set the clicked suggestion as the search query
+                  var clickedSuggestion = event.target.textContent;
+                  document.getElementById("searchInput").value = clickedSuggestion;
+                  searchItem(); // Perform the search for the clicked suggestion
+                  suggestionsContainer.innerHTML = ""; // Clear suggestions after selecting one
+                });
+                suggestionsContainer.appendChild(suggestionItem);
+              }
+            }
+          } else {
+            suggestionsContainer.innerHTML = "<div class='suggestion-item'>No suggestions found!</div>";
+          }
+        }
+      }
+      
+      function searchItem() {
+        var query = document.getElementById("searchInput").value;
+        var searchResultsContainer = document.getElementById("searchResults");
+        searchResultsContainer.innerHTML = ""; // Clear previous search results
+      
+        if (query) {
+          var matchingItems = searchWithinPage(query);
+      
+          if (matchingItems.length > 0) {
+            // Display the matching items on the page
+            for (var i = 0; i < matchingItems.length; i++) {
+              var searchResultItem = document.createElement("div");
+              searchResultItem.className = "search-result-item";
+              searchResultItem.innerHTML = "<h3>" + matchingItems[i].name + "</h3>" +
+                "<p>" + matchingItems[i].description + "</p>";
+              searchResultsContainer.appendChild(searchResultItem);
+            }
+          } else {
+            var searchResultItem = document.createElement("div");
+            searchResultItem.className = "search-result-item";
+            searchResultItem.textContent = "No matching items found!";
+            searchResultsContainer.appendChild(searchResultItem);
+          }
+        }
+      }
+      
+      
+    function getMatchingItems(query) {
+      // Find items that match the query
+      return items.filter(function (item) {
+        return (
+          item.name.toLowerCase().includes(query) ||
+          item.description.toLowerCase().includes(query)
+        );
+      });
+    }
+
+    function searchWithinPage(query) {
+      // Logic to search for the item within the page
+      // Modify this function based on your specific requirements and page structure
+
+      var matchingItems = [];
+
+      // Perform the search by iterating over the items and checking if the query matches the name or description
+      for (var i = 0; i < items.length; i++) {
+        if (
+          items[i].name.toLowerCase().includes(query.toLowerCase()) ||
+          items[i].description.toLowerCase().includes(query.toLowerCase())
+        ) {
+          matchingItems.push(items[i]);
+        }
+      }
+
+      return matchingItems; // Return matching items
+    }
+  </script>
+</head>
+<body>
+  <h1>Other Page</h1>
+
+  <input type="text" id="searchInput" placeholder="Search item" oninput="showSuggestions()">
+  <div id="suggestions"></div>
+
+  <button onclick="searchItem()">Search</button>
+  <div id="searchResults" class="search-results"></div>
+
+  <div class="container-art">
+    <div class="img-container">
+      <img src="../images/341673892_224754233570546_9119875624029739643_n.jpg" alt="">
+      <div class="price">
+        <h1>Price</h1>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
