@@ -1,0 +1,45 @@
+.container {
+  position: relative;
+  width: 180px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+.toggle-icon{
+  margin-left: 10px;
+}
+.hover-text {
+  cursor: pointer;
+}
+
+.info-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 500px;
+  display: none;
+}
+
+.toggle-icon {
+
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.info-box div {
+  background-color: #e0e0e0;
+  padding: 5px;
+}

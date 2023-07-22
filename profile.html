@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-6QryU0lfanrrZTMQ2LY5zU8bR3t//E3AAcC+9hXLekGrn94WjJPxJ+/OjlvMj1jgPuvqISGBZLqOz1zHe1zq6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li class="logo"><a href="#">Art Haven</a></li>
+            <li class="item"><a href="index.html">Home</a></li>
+            <li class="item"><a href="about.html">About</a></li>
+            <li class="item has-submenu">
+                <a tabindex="0">Services</a>
+                <ul class="submenu">
+                    <li class="subitem"><a href="productsPage.html">Products</a></li>
+                    <li class="subitem"><a href="step.html">Create</a></li>
+                    <li class="subitem"><a href="profile.html">Social</a></li>
+                </ul>
+            </li>
+    
+            <li class="item"><a href="contact.html">Contact</a> </li>
+
+            <li class="item"><a href="cart.html"><i class="fas fa-shopping-cart"></i></a> <span id="cartCount">0</span></li>
+            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+            
+        </ul>
+    </nav>
+
+    <section class="profile">
+        <div class="profile-picture">
+          <img id="profile-image" src="profile-picture.jpg" alt="Profile Picture">
+          <input type="file" id="profile-picture-input" accept="image/*"  style="display: none;">
+          <label for="profile-picture-input" class="profile-picture-label"><i class="fas fa-camera"></i></label>
+        </div>
+        <div class="profile-info">
+          <h2>Jade Ross D. Banag</h2>
+          <p>Age: 22</p>
+          <p>Location: 905 Batasan St. Inaon, Pulilan, Bulacan</p>
+        </div>
+      </section>
+      
+      
+      <section class="posts">
+        <h2>My Art</h2>
+        <!-- <button id="delete-storage-button">Delete Storage</button> -->
+
+        <div id="post-list"></div>
+        <form id="post-form">
+          <textarea id="post-content" placeholder="Write a post..."></textarea>
+          <div class="post-actions">
+            <input type="file" id="post-image-input" accept="image/*">
+            <label for="post-image-input" class="post-image-label"><i class="fas fa-camera"></i></label>
+            <button type="submit">Post</button>
+          </div>
+        </form>
+      </section>
+      
+
+  <script src="profile.js"></script>
+</body>
+</html>

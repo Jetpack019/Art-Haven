@@ -1,0 +1,284 @@
+.steps {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  
+}
+
+.step {
+  width: 200px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+.step.active {
+  background-color: #FF7F50;
+  color: #fff;
+}
+.step1{
+  align-items: center;
+  justify-content: center;
+}
+.step1_container{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0px 350px;
+  padding: 0  50px;
+}
+
+.step1_container button{
+  background-color: #FF7F50;
+  height: 50px;
+  width: 200px;
+  border-width: 0;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600
+  
+}
+.step1_container button:hover{
+  background-color: #343F4F;
+  transition: .5s ease;
+  height: 50px;
+  width: 200px;
+  border-width: 0;
+  justify-content: center;
+}
+.step1_container h3{
+  font-size: 20px;
+  padding: 0 200px;
+}
+
+.step1_container label{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.step1_container input{
+  width: 500px;
+  height: 20px;
+}
+.step1_container textarea{
+  width: 500px;
+  height: 100px;
+}
+
+.step1_container select{
+  width: 200px;
+  height: 30px;
+}
+.image_choose.btn_img {
+  width: 100px ;
+  height: 30px;
+}
+
+.row_step1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.row_step1 input{
+  width: 100%;
+  height: 40px;
+}
+.category_product{
+  display: flex;
+  flex-direction: column;
+}
+.image_choose{
+  display: flex;
+  flex-direction: column;
+}
+.image_preview{
+  height: 100px;
+  width: 100px;
+}
+
+
+/* Step2 */
+
+
+.step2{
+  align-items: center;
+  justify-content: center;
+}
+.step2_container{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0px 250px;
+  padding: 0  100px;
+}
+
+.step2_container button{
+  background-color: #FF7F50;
+  height: 50px;
+  width: 200px;
+  border-width: 0;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600
+  
+}
+.step2_container button:hover{
+  background-color: #343F4F;
+  transition: .5s ease;
+  height: 50px;
+  width: 200px;
+  border-width: 0;
+  justify-content: center;
+}
+.step2_container h3{
+  font-size: 20px;
+  padding: 0 250px;
+}
+
+.step2_container label{
+  font-size: 20px;
+  font-weight: 600;
+}
+.step2_container input{
+  width: 500px;
+  height: 20px;
+}
+.step2_row input{
+  width: 900px;
+  height: 20px;
+}
+
+
+.step2_row  select{
+  width: 400px;
+  height: 20px;
+}
+
+.step2_row{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.step2_row input{
+  width: 220px;
+  height: 20px;
+}
+.price{
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+}
+.quantity{
+  display: flex;
+  flex-direction: column;
+}
+
+.btn_step2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+
+
+
+/* Step3 */
+.step3{
+  align-items: center;
+  justify-content: center;
+}
+.step3_container{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0px 350px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.step3_container h3{
+  text-align: center;
+}
+
+.shipping_option{
+  display: flex;
+  flex-direction: column;
+}
+.step3_container label{
+  font-size: 15px;
+  font-weight: 700;
+}
+.step3_container select{
+  height: 30px;
+  width: 400px;
+}
+.row_step3 {
+  margin-top: 20px;
+}
+.choose_country{
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.choose_country select{
+  height: 30px;
+  width: 150px;
+  margin-right: 50px;
+}
+
+.payment select{
+  height: 30px;
+  width: 200px;
+}
+
+.payment{
+  display: flex;
+  flex-direction: column;
+}
+
+.row_step3{
+  display: flex;
+  
+}
+.ship_method{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+
+
+.btn_step3 button{
+
+  height: 50px;
+  width: 100px;
+  border: none;
+
+}
+
+
+button {
+  margin-top: 10px;
+}
+
+#success-message {
+  display: none;
+  text-align: center;
+}
+
+#success-message h3 {
+  color: #4CAF50;
+}
+
+#success-message p {
+  color: #777;
+}
