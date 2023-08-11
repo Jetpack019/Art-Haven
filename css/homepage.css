@@ -197,7 +197,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
   transition:2s ease ;
- 
+  position: relative;
 }
 
 .hero_section img{
@@ -206,23 +206,36 @@ a {
   height: 250px;
   text-align: center;
   align-self: center;
+  animation-name: topimage;
+  animation-duration:1s;
+  opacity: 1;
 }
-.hero_section h1{
+
+@keyframes topimage {
+  0%   {  opacity: 0;}
+  50%  {    opacity: 0.5;}
+  100% {    opacity: 1;}
+}
+.hero_section h1 {
   color: white;
   margin-top: 20px;
   font-size: 30px;
+  animation-name: h1move;
+  animation-duration: 1s;
 }
-
+@keyframes h1move {
+  0%   {  opacity: 0;}
+  100% {    opacity: 1;}
+}
 .top{
   display: flex;
   flex-direction: column;
- ;
+
 }
+
 .top h1{
   text-align: center;
 }
-
-
 
 .search{
   align-items: center;
@@ -230,10 +243,14 @@ a {
   align-self: center;
   margin-top: 50px;
   align-items: center;
-  justify-content: center
-  
+  justify-content: center;
+  animation-name: searchmove;
+  animation-duration: 1s;
 }
-
+@keyframes searchmove {
+  0%   {  opacity: 0;}
+  100% {    opacity: 1;}
+}
 .search input{
   height: 40px;
   width: 300px;
@@ -360,8 +377,15 @@ button:hover{
   width: 350px;
   height: 250px;
   cursor: pointer;
+  animation-name: imagebottommove;
+  animation-duration: 1s;
 }
 
+@keyframes imagebottommove {
+  0%   { margin-left: calc(100% - 30px); } /* Start from the left */
+  50%  { margin-left: calc(50% - 15px); } /* Move halfway to the center */
+  100% {   margin-left: 0; } /* Move to the center */
+}
 
 
 /* Details */
@@ -1465,7 +1489,7 @@ padding-top: 150px;
 
   /* Details */
   .details {
-
+   
     margin-bottom: 50px;
     height: 60%;
   }
@@ -1613,4 +1637,18 @@ padding-top: 150px;
       color: #30D5C8;
     
     }
+}
+
+
+/* Scroll function */
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
 }
