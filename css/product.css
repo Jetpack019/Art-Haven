@@ -189,7 +189,7 @@ a {
 /* Hero Section */
 .hero_section{
     width: 100%;
-    height: 80vh;
+    height: 60vh;
     overflow: hidden;
     background-image:linear-gradient(rgba(2, 2, 2, 0.8),rgba(0,0,0,0.8)), url('../images/back1.jpg');
     background-size: contain;
@@ -206,12 +206,24 @@ a {
     display: flex;
     flex-direction: column;
   }
- 
+  .top h1{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+    color: white;
+  }
+  .top h4{
+    text-align: center;
+    margin-top: 10px;
+    font-size: .8rem;
+    color: white;
+    padding: 0 50px;
+  }
   .search{
     align-items: center;
     justify-content: center;
     align-self: center;
-    margin-top: 100px;
+    margin-top: 60px;
     align-items: center;
     justify-content: center
     
@@ -423,25 +435,18 @@ a {
 .top_container_traditional {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 300px;
 }
 
 .top_container_traditional img {
   width: 100%;
   height: 100%;
-  background-position: center;
-  background-size: contain;
-}
-.top_container_traditional {
-  position: relative;
-  width: 100%;
-  height: 200px;
+  background-position:center;
+  background-size:cover;
 }
 
-.top_container_traditional img {
-  width: 100%;
-  height: 100%;
-}
+
+
 
 .top_container_traditional::before {
   content: "";
@@ -450,7 +455,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* Adjust the color and opacity as needed */
+  background-color: rgba(0, 0, 0, 0.3); 
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -468,11 +473,16 @@ a {
   padding: 0;
   text-align: center;
   color: black;
+  opacity: 0.8;
   transition: color 0.3s;
+  font-size: 3rem;
+ 
 }
 
 .top_container_traditional:hover h1 {
   color: white;
+  opacity: 1;
+
 }
 
 
@@ -706,7 +716,7 @@ padding-top: 150px;
       /* Hero Section */
       .hero_section{
         width: 100%;
-        height: 50vh;
+        height: 80vh;
         overflow: hidden;
         background-image:linear-gradient(rgba(2, 2, 2, 0.8),rgba(0,0,0,0.8)), url('../images/back1.jpg');
         background-size: contain;
@@ -716,6 +726,7 @@ padding-top: 150px;
         justify-content: space-between;
         transition:2s ease ;
         margin-bottom: 100px;
+        
       }
 
 
@@ -724,20 +735,25 @@ padding-top: 150px;
         flex-direction: column;
       }
 
-      .search{
-        align-items: center;
-        justify-content: center;
-        align-self:center;
-        margin-top: 100px;
-        align-items: center;
-        justify-content: center;
+    .top h1{
+        text-align: center;
+        margin-top: 80px;
+        font-size: 2rem;
+        color: white;
       }
+      .top h4{
+        text-align: center;
+        margin-top: 10px;
+        font-size: .8rem;
+        color: white;
+        padding: 0 50px;
+      }
+
 
       .search input{
         height: 40px;
         width:200px;
         padding-left: 5px;
-     
         font-size: 15px;
         border: none;
       }
