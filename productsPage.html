@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="css/product.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+          <li class="logo"><a href="#">Art Haven</a></li>
+          <li class="item"><a href="index.html">Home</a></li>
+          <li class="item"><a href="about.html">About</a></li>
+          <li class="item has-submenu">
+              <a tabindex="0">Services</a>
+              <ul class="submenu">
+                  <li class="subitem"><a href="productsPage.html">Products</a></li>
+                  <li class="subitem"><a href="step.html">Create</a></li>
+                  <li class="subitem"><a href="profile.html">Social</a></li>
+              </ul>
+          </li>
+  
+    
+            <li class="item"><a href="#">Contact</a> </li>
+            <li class="item button"><a href="login.html">Log In</a></li>
+            <li class="item"><a href="cart.html"><i class="fas fa-shopping-cart"></i></a> <span id="cartCount">0</span></li>
+            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+            
+        </ul>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <div class="hero_section">
+        <div class="top">
+        <h1>Welcome to Our Product Page: Explore Our Exquisite Collection</h1>
+        <h4>Discover Our Captivating Collection of Creativity and Expression, Expertly Curated and Lovingly Presented for Your Aesthetic Delight</h4>
+       <div class="search">
+            <input type="text" id="searchInput" placeholder="Search item" oninput="showSuggestions()">
+        
+            <button onclick="searchItem()">Search</button>
+        <div id="suggestions"></div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Best Art -->
+    <div class="best_works reveal">
+        <h1>Best Works</h1>
+        <div class="best_works_container" id="best-works-container">
+            <!-- <div class="wrapper_works">
+                <div class="image_work">
+                    <img src="images/best_works/best_work8.jpg" alt="">
+                </div>
+                <div class="bottom_artist">
+                    <h1>Name</h1>
+                    <p>cost</p>
+                </div>
+            </div> -->
+            
+        </div>
+    </div>
+
+    
+
+    <!-- Digital Art -->
+    <div class="digital_art reveal">
+        <h1>Digital Arts</h1>
+        <div class="digital_art_container">
+            <div class="left_digital">
+                <div class="container_left">
+                    <img src="images/digital/digitalArt_main.jpg" alt="">
+                </div>
+            </div>
+            <div class="right_digital">
+                <div class="container_right" id="works-digital-container">
+                    <!-- <div class="wrapper_works_digital">
+                        <div class="image_work_digital">
+                           <a href="index.html"> <img src="" alt=""></a>
+                        </div>
+                        <div class="bottom_artist_digital">
+                            <p></p>
+                            <p></p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Traditional Art -->
+    <div class="traditional_Art reveal">
+        <div class="traditional_art_container">
+            <div class="top_traditional">
+                <div class="top_container_traditional">
+                    <img src="images/traditional/traditionalArt14.jpg" alt="">
+                    <h1>Traditional Arts</h1>
+                </div>
+            </div>
+            <div class="bottom_traditional" id="works-traditional-container">
+                <div class="wrapper_works_traditional">
+                    <div class="image_work_traditional">
+                        <img src="" alt="">
+                    </div>
+                    <div class="bottom_artist_traditional">
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3D Art -->
+    <div class="threeD_art reveal">
+        <h1>3D Arts</h1>
+        <div class="threeD_art_container">
+            <div class="left_3D">
+                <div class="container_left_3d">
+                    <img src="images/3d/3dArt6.jpg" alt="">
+                </div>
+            </div>
+            <div class="right_3d">
+                <div class="container_right_3d" id="works-3d-container">
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Footer  -->
+      <div class="footer">
+        <div class="footer_container">
+            <div class="top_footer">
+                <img src="images/back2.jpg" alt="">
+                <p>Art Haven has established partnerships with art galleries, art supply stores, 
+                    nonprofit art organizations, art schools and universities, art events and 
+                    festivals, art publications and blogs, and corporate entities to foster collaboration, 
+                    exposure, and opportunities for artists within their platform.</p>
+            </div>
+            <div class="bottom_footer">
+                <div class="navfooter">
+                  <h1>Services</h1>
+                  <ul>
+                    <li><a href="#">Ordering</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                <div class="navfooter">
+                  <h1>Privacy Policy</h1>
+                  <ul>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Rights</a></li>
+                  </ul>
+                </div>
+                <div class="navfooter">
+                  <h1>About Us</h1>
+                  <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Collaboration</a></li>
+                    <li><a href="#">Overview</a></li> 
+                  </ul>
+                </div>
+                <div class="navfooter">
+                  <h1>Account</h1>
+                  <ul>
+                    <li><a href="#">User Profile</a></li>
+                    <li><a href="#">Products</a></li>
+                  </ul>
+                </div>
+                <div class="navfooter">
+                    <h1 >Art Haven</h1>
+                    <ul>
+                      <li><a href="#">arthaven@email.com</a></li>
+                      <li><a href="#">Products</a></li>
+                    </ul>
+                  </div>
+              </div>
+        </div>
+    </div> 
+    <!-- BottoM Copyright -->
+    <div class="copyright_container">
+        <div class="right_container"><h5>2023 Art Haven. All rights reserved.</h5> </div>
+    </div>
+
+
+    <script src="product.js"></script>
+</body>
+</html>

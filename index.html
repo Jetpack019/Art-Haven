@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Art Haven</title>
+
+
+
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li class="logo"><a href="#">Art Haven</a></li>
+            <li class="item"><a href="index.html">Home</a></li>
+            <li class="item"><a href="about.html">About</a></li>
+            <li class="item has-submenu">
+                <a tabindex="0">Services</a>
+                <ul class="submenu">
+                    <li class="subitem"><a href="productsPage.html">Products</a></li>
+                    <li class="subitem"><a href="step.html">Create</a></li>
+                    <li class="subitem"><a href="profile.html">Social</a></li>
+                </ul>
+            </li>
+    
+            <li class="item"><a href="contact.html">Contact</a> </li>
+            <li class="item button"><a href="login.html">Log In</a></li>
+            <li class="item"><a href="cart.html"><i class="fas fa-shopping-cart"></i></a> <span id="cartCount">0</span></li>
+            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+            
+        </ul>
+    </nav>
+
+    <div class="hero_section">
+        <div class="top">
+            <img src="images/Logo3.jpg" alt="">
+            <h1>Where Art Flourishes and Dreams Take Shape</h1>
+        
+       <div class="search">
+            <input type="text" id="searchInput" placeholder="Search item" oninput="showSuggestions()">
+        
+            <button onclick="searchItem()">Search</button>
+        <div id="suggestions"></div>
+        </div>
+        </div>
+
+    </div>
+
+    <!-- Gallery -->
+    <div class="container_gallery">
+        <div class="top_gallery">
+            <img class="topImg" src="images/digital/digitalArt2.jpg" alt="">
+            <h1>Embrace the Beauty of Artistic Expression</h1>
+            <img class="topImg" src="images/digital/digitalArt1.jpg" alt="">
+        </div>
+        <div class="bottom_gallery">
+            <img class="bottomImg" src="images/3d/3dArt3.jpg" alt="">
+            <img class="bottomImg" src="images/3d/3dArt2.jpg" alt="">
+            <img class="bottomImg" src="images/traditional/traditionalArt2.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Details -->
+    <div class="details reveal">
+        <h1 id="mainTitle">Our Price Assurance</h1>
+        <div class="container_info_art_haven">
+            <div class="details_container">
+                <h3 id="subTitle">No Surprises or Hidden Costs</h3>
+                <p id="description">Purchasing art from Art Haven supports artists, empowering them to pursue their passion and highlighting the value of art in our lives.</p>
+            </div>
+            <div class="details_container">
+                <h3 id="subTitle">Confidence in Your Art Purchase</h3>
+                <p id="description">Our dedicated team collaborates closely with artists to provide you with the best value for your investment, making art accessible and affordable for all art enthusiasts.</p>
+            </div>
+            <div class="details_container">
+                <h3 id="subTitle">Empowering Artists</h3>
+                <p id="description">We value honesty and transparency, ensuring a seamless and transparent art-buying experience without surprises or hidden costs.</p>
+            </div>
+            <div class="details_container">
+                <h3 id="subTitle">Unbeatable Deals on Artwork</h3>
+                <p id="description">We ensure that you get the best value for your investment, making art accessible and affordable for all art enthusiasts through close collaboration with artists.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Banner -->
+    <div class="banner reveal">
+        <div class="card">
+            <div class="left">
+                <h3>Price</h3>
+                <p>Original Artwork<br>Starting at $199</p>
+                <p>Discover a collection of exquisite art pieces created by talented artists. Each artwork is unique and carefully crafted to evoke emotions and inspire. With prices starting at just $199, you can bring home a captivating piece that will add beauty to your space.</p>
+            </div>
+            <div class="right">
+                <img src="images/price.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Best Artists -->
+    <div class="best_artists reveal">
+        <h1>Best Artists</h1>
+        <div class="artist_grid">
+            <div class="best_artist_container">
+                <div class="image_container">
+                    <img src="images/artists/artist1.jpg" alt="">
+                </div>
+                <h3>Maxwell Sullivan</h3>
+            </div>
+            <div class="best_artist_container">
+                <div class="image_container">
+                    <img src="images/artists/artist2.jpg" alt="">
+                </div>
+                <h3>Eleanor Brooks</h3>
+            </div>
+            <div class="best_artist_container">
+                <div class="image_container">
+                    <img src="images/artists/artist3.jpg" alt="">
+                </div>
+                <h3>Jackson Hayes</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Images Art Slides -->
+    <div class="art_slides reveal">
+        <h1>Featured Artworks</h1>
+        <div class="wrapper">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <div class="carousel">
+              <img src="/images/digital/digitalArt1.jpg" alt="img" draggable="false">
+              <img src="/images/back2.jpg" alt="img" draggable="false">
+              <img src="/images/3d/3dArt2.jpg" alt="img" draggable="false">
+              <img src="/images/traditional/traditionalArt3.jpg" alt="img" draggable="false">
+              <img src="/images/digital/digitalArt2.jpg" alt="img" draggable="false">
+              <img src="/images/traditional/traditionalArt2.jpg" alt="img" draggable="false">
+              <img src="/images/3d/3dArt1.jpg" alt="img" draggable="false">
+              <img src="/images/digital/digitalArt1.jpg" alt="img" draggable="false">
+              <img src="/images/traditional/traditionalArt1.jpg" alt="img" draggable="false">
+            </div>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+          </div>
+          
+    </div>
+
+    <!-- Testimonials  -->
+    <div class="testimonials reveal">
+        <h1>Testimonials</h1>
+        <div class="testimonials_container">
+            <div class="testimonials_Card">
+                <div class="top_testimonials">
+                    <img src="images/digital/digitalArt1.jpg" alt="">
+                </div>
+                <div class="bottom_testimonials">
+                    <div class="testimonial_user">
+                        <img src="images/testimonials/testimonial2.jpg" alt="">
+                        <div class="userRate">
+                            <h1>Sarah, a Painter</h1>
+                           
+                            <div class="user_rate">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user_comments">
+                        <p>Art Haven has been a 
+                            game-changer for me as an 
+                            artist. The platform provided me with an incredible opportunity to showcase and sell my paintings to a wider audience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials_Card">
+                <div class="top_testimonials">
+                    <img src="images/3d/3dArt3.jpg" alt="">
+                </div>
+                <div class="bottom_testimonials">
+                    <div class="testimonial_user">
+                        <img src="images/testimonials/testimonial1.jpg" alt="">
+                        <div class="userRate">
+                            <h1>Sarah, a Painter</h1>
+                            
+                            <div class="user_rate">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user_comments">
+                        <p>Art Haven has been my go-to platform to share and sell my photography. The community of artists and art enthusiasts on Art Haven is truly inspiring. I've not only sold my artwork but also gained valuable exposure and recognition.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials_Card">
+                
+                <div class="top_testimonials">
+                    <img src="images/traditional/traditionalArt2.jpg" alt="">
+                </div>
+               
+                <div class="bottom_testimonials">
+                    <div class="testimonial_user">
+                        <img src="images/testimonials/testimonial3.jpg" alt="">
+                        <div class="userRate">
+                            <h1>Sarah, a Painter</h1>
+                            
+                            <div class="user_rate">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user_comments">
+                        <p>Art Haven has revolutionized the way I connect with art enthusiasts and fellow digital artists. The platform provides a space where I can showcase my digital creations, collaborate with other artists, and receive valuable feedback.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- Footer  -->
+    <div class="footer ">
+        <div class="footer_container">
+            <div class="top_footer">
+                <img src="images/back2.jpg" alt="">
+                <p>Art Haven has established partnerships with art galleries, art supply stores, 
+                    nonprofit art organizations, art schools and universities, art events and 
+                    festivals, art publications and blogs, and corporate entities to foster collaboration, 
+                    exposure, and opportunities for artists within their platform.</p>
+            </div>
+            <div class="bottom_footer">
+                <div class="navfooter">
+                  <h1>Services</h1>
+                  <ul>
+                    <li><a href="#">Ordering</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                <div class="navfooter">
+                  <h1>Privacy Policy</h1>
+                  <ul>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Rights</a></li>
+                  </ul>
+                </div>
+                <div class="navfooter">
+                  <h1>About Us</h1>
+                  <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Collaboration</a></li>
+                    <li><a href="#">Overview</a></li> 
+                  </ul>
+                </div>
+                <div class="navfooter">
+                  <h1>Account</h1>
+                  <ul>
+                    <li><a href="#">User Profile</a></li>
+                    <li><a href="#">Products</a></li>
+                  </ul>
+                </div>
+                <div class="navfooter">
+                    <h1 >Art Haven</h1>
+                    <ul>
+                      <li><a href="#">arthaven@email.com</a></li>
+                      <li><a href="#">Products</a></li>
+                    </ul>
+                  </div>
+              </div>
+        </div>
+    </div> 
+
+    <!-- BottoM Copyright -->
+    <div class="copyright_container">
+        <div class="right_container"><h5>2023 Art Haven. All rights reserved.</h5> </div>
+    </div>
+
+    </div>
+    <script src="/script.js"></script>
+   
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Step Form</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+
+    <div class="steps">
+      <div class="step1"><h3>Step1</h3><span class="step active"></span></div>
+      <div class="step2"><h3>Step2</h3><span class="step"></span></div>
+      <div class="step2"><h3>Step3</h3><span class="step"></span></div>
+    </div>
+    <form  id="form" onsubmit="return false;">
+        <div id="step1" class="step1">
+          <div class="step1_container">
+            <h3>Product Details</h3>
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" required>
+            <br>
+            <label for="description">Description:</label>
+            <textarea id="description" required></textarea>
+          
+            <div class="row_step1">
+                <div class="category_product">
+                    <label for="category">Category:</label>
+                <select id="category" required>
+                  <option value="">Select Category</option>
+                  <option value="category1">Category 1</option>
+                  <option value="category2">Category 2</option>
+                  <option value="category3">Category 3</option>
+                </select>
+                </div>
+              
+                <div class="image_choose">
+                    <label for="image">Select Image:</label>
+                    <input class="btn_img" type="file" id="image" accept="image/*" onchange="displayImagePreview(event)" required>
+                </div>
+            </div>
+            <div id="image-preview" class="image_preview"></div>
+            <button type="button" class="next-btn" onclick="nextStep(1)">Next</button>
+          </div>
+        </div>
+      <div id="step2" style="display: none;">
+        <div class="step2_container">
+            <h3>Pricing Inventory</h3>
+            <div class="step2_row">
+                <div class="price">
+                    <label for="email">Price:</label>
+                    <input type="number" id="price" required>
+                </div>
+        
+                <div class="quantity">
+                    <label for="email">Quantity:</label>
+                    <input type="number" id="quantity" required>
+                </div>
+            </div>
+            
+            <label for="email">Currency:</label>
+            <input type="number" id="currency" required>
+            <div class="btn_step2">
+                <button type="button" class="prev-btn" onclick="prevStep(2)">Previous</button>
+                <button type="button" class="next-btn" onclick="nextStep(2)">Next</button>
+            </div>
+        </div>
+      </div>
+      <div id="step3" style="display: none;">
+        <div class="step3_container">
+            <h3>Step 3</h3>
+            <div class="shipping_option">
+                <label for="shipping">Shipping Options:</label>
+                <select id="shipping" required>
+                  <option value="">Select Shipping Option</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+            </div>
+        <div class="row_step3">
+            <div class="choose_country">
+                <label for="country">Country:</label>
+                <select id="country" required>
+                <option value="">Select Country</option>
+                <option value="country1">Country 1</option>
+                <option value="country2">Country 2</option>
+                <option value="country3">Country 3</option>
+                </select>
+            </div>
+        
+            <div class="payment">
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" required>
+                <option value="">Select Payment Method</option>
+                <option value="visa">Visa</option>
+                <option value="paypal">PayPal</option>
+                <option value="mastercard">Mastercard</option>
+                <option value="amex">American Express</option>
+                <option value="other">Other</option>
+                </select>
+            </div>
+        </div>
+      
+        <div class="ship_method">
+            <label for="shipping-method">Shipping Method:</label>
+            <select id="shipping-method" required>
+              <option value="">Select Shipping Method</option>
+              <option value="method1">Method 1</option>
+              <option value="method2">Method 2</option>
+              <option value="method3">Method 3</option>
+            </select>
+        </div>
+        <div class="btn_step3">
+             
+        <button type="button" class="prev-btn" onclick="prevStep(3)">Previous</button>
+        <button type="submit" class="submit-btn" onclick="submitForm()">Submit</button>
+        </div>
+        </div>
+      </div>
+      
+    </form>
+    <div id="success-message" style="display: none;">
+      <h3>Success!</h3>
+      <p>Your form has been submitted successfully.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/cartPage.css">
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="back-arrow" onclick="goBack()">
+        <span><i class="fas fa-arrow-left"></i> </span>
+      </div>
+      <li class="item"><a href="cart.html"><i class="fas fa-shopping-cart"></i></a> <span id="cartCount">0</span></li>
+      <h1 onclick="goToHome()">Art Haven Cart</h1>
+    </div>
+
+    <div id="cartItems">
+    
+    </div>
+    <div id="emptyCartMessage" class="empty-cart-message" style="display: none;">
+      Your Cart is Empty
+    </div>
+    <script>
+      // Retrieve cart data from localStorage
+      const cartItems = JSON.parse(localStorage.getItem('cartItemsMain'));
+
+      // Function to generate the cart items UI
+      function generateCartItems() {
+        const cartItemsElement = document.getElementById('cartItems');
+        const emptyCartMessageElement = document.getElementById('emptyCartMessage');
+
+        if (cartItems && cartItems.length > 0) {
+          cartItems.forEach((item) => {
+            // ... (previous code to generate cart items) ...
+          });
+
+          cartItemsElement.style.display = 'block';
+          emptyCartMessageElement.style.display = 'none';
+        } else {
+          cartItemsElement.style.display = 'none';
+          emptyCartMessageElement.style.display = 'block';
+        }
+
+        if (cartItems) {
+          cartItems.forEach((item) => {
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+
+            const itemImage = document.createElement('img');
+            itemImage.className = 'product-image';
+            itemImage.src = item.imageSrc;
+            itemImage.alt = item.artist;
+
+            const itemDetails = document.createElement('div');
+            itemDetails.className = 'item-details';
+
+            const itemName = document.createElement('h3');
+            itemName.textContent = `${item.artist}`;
+
+            const itemCost = document.createElement('p');
+            itemCost.textContent = `Cost: ${item.cost}`;
+
+            const itemQuantity = document.createElement('p');
+            itemQuantity.textContent = `Quantity: ${item.quantity}`;
+
+            itemDetails.appendChild(itemName);
+            itemDetails.appendChild(itemCost);
+            itemDetails.appendChild(itemQuantity);
+
+            const quantityButtons = document.createElement('div');
+            quantityButtons.className = 'quantity-buttons';
+
+            const minusButton = document.createElement('button');
+            minusButton.textContent = '-';
+            minusButton.onclick = () => removeFromCart(item.id);
+
+            const plusButton = document.createElement('button');
+            plusButton.textContent = '+';
+            plusButton.onclick = () => addToCart(item.id);
+
+            quantityButtons.appendChild(minusButton);
+            quantityButtons.appendChild(plusButton);
+
+            cartItem.appendChild(itemImage);
+            cartItem.appendChild(itemDetails);
+            cartItem.appendChild(quantityButtons);
+
+            cartItemsElement.appendChild(cartItem);
+          });
+        }
+
+          // Call the function to update the cart count
+          updateCartCount();
+      }
+      function updateCartCount() {
+        const cartCountElement = document.getElementById('cartCount');
+        const cartCount = cartItems ? cartItems.reduce((total, item) => total + item.quantity, 0) : 0;
+        cartCountElement.textContent = cartCount.toString();
+      }
+      // Call the function to generate the cart items
+      generateCartItems();
+
+      // Function to remove an item from the cart
+      function removeFromCart(id) {
+        const itemIndex = cartItems.findIndex((item) => item.id === id);
+        if (itemIndex !== -1) {
+          const item = cartItems[itemIndex];
+          if (item.quantity > 1) {
+            item.quantity -= 1;
+          } else {
+            cartItems.splice(itemIndex, 1);
+          }
+          updateCart();
+        }
+      }
+
+      // Function to add an item to the cart
+      function addToCart(id) {
+        const product = cartItems.find((item) => item.id === id);
+        if (product) {
+          const existingItem = cartItems.find((item) => item.id === id);
+          if (existingItem) {
+            existingItem.quantity += 1;
+          } else {
+            cartItems.push({ ...product, quantity: 1 });
+          }
+          updateCart();
+        }
+      }
+
+      // Function to update the cart
+      function updateCart() {
+        // Store cart data in localStorage
+        localStorage.setItem('cartItemsMain', JSON.stringify(cartItems));
+
+        // Clear the cart items element
+        const cartItemsElement = document.getElementById('cartItems');
+        cartItemsElement.innerHTML = '';
+
+        // Generate the updated cart items UI
+        generateCartItems();
+
+        updateCartCount();
+      }
+
+          // ... (previous JavaScript code) ...
+
+      // Function to go back to the products page
+      function goBack() {
+        window.location.href = 'productsPage.html';
+      }
+
+      // Function to go to the home page
+      function goToHome() {
+        // You can add a link to the home page here if needed
+        alert('You clicked the Artistic Cart Page title!');
+      }
+    </script>
+  </body>
+
+  </html>
